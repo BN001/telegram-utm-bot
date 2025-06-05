@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: telegram-utm-bot
+    runtime: python
+    repo: https://github.com/BN001/telegram-utm-bot
+    branch: master  # или master, если ты используешь её
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
